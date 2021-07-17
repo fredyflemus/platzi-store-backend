@@ -1,0 +1,26 @@
+language: node_js
+cache:
+  directories:
+    - node_modules
+    - ~/.npm
+node_js:
+  - "12"
+git:
+  depth: 3
+script:
+  - yarn test
+notifications:
+  email:
+    recipients:
+      - fredyflemus@gmail.com
+      - fredyfdlemus@gmail.com
+    on_success: always
+    on_failure: always
+deploy:
+  provide: heroku
+  skip-cleanup: true
+  keep-history: true
+  api_key: 652c9570-eacd-4314-980a-4ff632f58751
+  app: platzi-store-fredyflemus
+  on:
+    repo: fredyflemus/platzi-store-backend
